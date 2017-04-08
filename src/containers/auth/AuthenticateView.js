@@ -20,6 +20,13 @@ import { AppStyles, AppSizes } from '@theme/';
 // Components
 import { Spacer, Text, Button } from '@ui/';
 
+const MK = require('react-native-material-kit');
+
+const {
+  MKButton,
+  MKColor,
+} = MK;
+
 /* Styles ==================================================================== */
 const styles = StyleSheet.create({
   background: {
@@ -27,8 +34,13 @@ const styles = StyleSheet.create({
     height: AppSizes.screen.height,
     width: AppSizes.screen.width,
   },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'white',
+  },
   logo: {
-    width: AppSizes.screen.width * 0.85,
+    width: AppSizes.screen.width * 0.5,
     resizeMode: 'contain',
   },
   whiteText: {
@@ -36,13 +48,20 @@ const styles = StyleSheet.create({
   },
 });
 
+const ColoredRaisedButton = MKButton.coloredButton()
+  .withText('BUTTON')
+  .withOnPress(() => {
+    console.log("Hi, it's a colored button!");
+  })
+  .build();
+
 /* Component ==================================================================== */
 class Authenticate extends Component {
   static componentName = 'Authenticate';
 
   render = () => (
     <Image
-      source={require('../../images/login.jpg')}
+      source={require('../../images/login.png')}
       style={[AppStyles.containerCentered, AppStyles.container, styles.background]}
     >
       <Image
@@ -52,6 +71,7 @@ class Authenticate extends Component {
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
         <View style={[AppStyles.flex1]}>
+          <ColoredRaisedButton />
           <Button
             title={'Login'}
             icon={{ name: 'lock' }}
