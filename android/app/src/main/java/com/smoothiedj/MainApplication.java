@@ -1,4 +1,4 @@
-package com.smoothie;
+package com.smoothiedj;
 
 import android.app.Application;
 import android.util.Log;
