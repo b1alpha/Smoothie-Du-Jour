@@ -48,11 +48,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const ColoredRaisedButton = MKButton.coloredButton()
-  .withText('BUTTON')
-  .withOnPress(() => {
-    console.log("Hi, it's a colored button!");
-  })
+const LoginButton = MKButton.coloredButton()
+  .withText('LOGIN YO')
+  .build();
+
+const SignupButton = MKButton.coloredButton()
+  .withText('SIGN UP')
   .build();
 
 /* Component ==================================================================== */
@@ -71,12 +72,7 @@ class Authenticate extends Component {
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
         <View style={[AppStyles.flex1]}>
-          <ColoredRaisedButton />
-          <Button
-            title={'Login'}
-            icon={{ name: 'lock' }}
-            onPress={Actions.login}
-          />
+          <LoginButton onPress={ Actions.login } />
         </View>
       </View>
 
@@ -84,11 +80,7 @@ class Authenticate extends Component {
 
       <View style={[AppStyles.row, AppStyles.paddingHorizontal]}>
         <View style={[AppStyles.flex1]}>
-          <Button
-            title={'Sign up'}
-            icon={{ name: 'face' }}
-            onPress={Actions.signUp}
-          />
+          <SignupButton onPress={ Actions.signUp } />
         </View>
       </View>
 
