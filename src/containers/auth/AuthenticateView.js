@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
 });
 
 const LoginButton = MKButton.coloredButton()
-  .withText('LOGIN YO')
+  .withText('LOGIN')
   .build();
 
 const SignupButton = MKButton.coloredButton()
